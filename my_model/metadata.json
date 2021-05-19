@@ -1,0 +1,11 @@
+{
+  
+  "tfjsVersion": "1.3.1",
+  "tmVersion": "2.3.1",
+  "packageVersion": "0.8.4",
+  "packageName": "@teachablemachine/image",
+  "timeStamp": "2021-05-19T06:49:27.099Z",
+  "userMetadata": {},
+  "modelName": "my_model",
+  "labels": [ "민니", "미연", "소연", "수진", "슈화", "우기" ]
+}
