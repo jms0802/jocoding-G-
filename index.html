@@ -1,26 +1,85 @@
 <!DOCTYPE html>
 
 <head>
-  <!--<meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
   <title>(G)I-DLE 닮은 꼴</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+  <nav class="navbar navbar-expand-lg navbar-light navbar-light nav distance" style="padding: 2.1% 5.1%;">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">(G)I-DLE 닮은 꼴</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Dropdown
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+          </li>
+        </ul>
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+  <section class="section">
+    <h1 class="title">(여자)아이들 닮은 꼴 테스트</h1>
+    <h2 class="subtitle">(여자)아이들 멤버 중 누구와 닮았을까?</h2>
+  </section>
+  <section class="youtube">
+    <div class="container mt-5 youtube-cover d-flex flex-row-reverse">
+      <img src="images/youtube-img.jpg" alt="" class="youtube-icon">
+      <a href="" class="youtue-link">By 조코딩 유튜브 채널</a>
+    </div>
+  </section>
+
+
+
   <div>Teachable Machine Image Model</div>
   <button type="button" onclick="init()">Start</button>
   <button type="button" onclick="predict()">예측</button>
   <script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
   <div class="file-upload">
-    <button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Add
-      Image</button>
+    <!--<button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Add
+      Image</button>-->
 
     <div class="image-upload-wrap">
-      <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
+      <input class="container file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
       <div class="drag-text">
-        <h3>Drag and drop a file or select add Image</h3>
+        <img src="images/upload-img.png" class="mt-5 pt-3 upload-img">
+        <h3 class="mb-5 pb-3 pt-3 upload-text">얼굴 사진을 올려놓거나 눌러서 업로드하세요!</h3>
       </div>
     </div>
     <div class="file-upload-content">
@@ -33,6 +92,15 @@
   </div>
   <div id="webcam-container"></div>
   <div id="label-container"></div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+    integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js"
+    integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT"
+    crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
   <script type="text/javascript">
@@ -71,28 +139,29 @@
       const classPrediction = prediction[0].className;
       const classPrediction_p = (Number(prediction[0].probability.toFixed(2)) * 100 - 0.01).toFixed(2);
       labelContainer.childNodes[0].innerHTML = "<font color='#c449c2' size='5em'>" + classPrediction + "</font>" + "을(를) " + classPrediction_p + "% 닮았습니다.";
-      switch (classPrediction) { 
-        case "민니": 
+      switch (classPrediction) {
+        case "민니":
           labelContainer.childNodes[1].innerHTML = "<img src='/images/Minne.jpg' width=\"auto\" height=\"300px\">"
-          break; 
-        case "미연": 
+          break;
+        case "미연":
           labelContainer.childNodes[1].innerHTML = "<img src='/images/Miyeon.jpg' width=\"auto\" height=\"300px\">"
-          break; 
-        case "슈화": 
+          break;
+        case "슈화":
           labelContainer.childNodes[1].innerHTML = "<img src='/images/Shuhwa.jpg' width=\"auto\" height=\"300px\">"
           break;
-        case "수진": 
+        case "수진":
           labelContainer.childNodes[1].innerHTML = "<img src='/images/Soojin.jpg' width=\"auto\" height=\"300px\">"
           break;
-         case "소연": 
+        case "소연":
           labelContainer.childNodes[1].innerHTML = "<img src='/images/Soyeon.jpg' width=\"auto\" height=\"300px\">"
           break;
-        case "우기": 
+        case "우기":
           labelContainer.childNodes[1].innerHTML = "<img src='/images/Yuqi.jpg' width=\"auto\" height=\"300px\">"
           break;
-        default: 
-          alert("잘못된 입력 값!"); 
-          break; }
+        default:
+          alert("잘못된 입력 값!");
+          break;
+      }
       //classPrediction_p_text = Number(classPrediction_p) * 100
       // for (let i = 0; i < maxPredictions; i++) {
       //   const classPrediction =
