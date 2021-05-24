@@ -4,8 +4,8 @@ body {
   }
   
   .file-upload {
-    background-color: #ffffff;
-    padding: 11% 0;
+    background-color: #cbcbcb79;
+    padding: 11% 4%;
   }
   
   .file-upload-btn {
@@ -41,6 +41,7 @@ body {
   }
   
   .file-upload-input {
+    height: 100%;
     position: absolute;
     outline: none;
     opacity: 0;
@@ -51,7 +52,7 @@ body {
   }
   
   .image-upload-wrap {
-    width: 70%;
+    width: 55%;
     margin: 0 auto;
     border: 4px dashed #1FB264;
     position: relative;
@@ -63,7 +64,7 @@ body {
   
   .image-dropping,
   .image-upload-wrap:hover {
-    background-color: #921d75;
+    background-color: #b862a2;
     border: 2px dashed #ffffff;
   }
   
@@ -79,7 +80,7 @@ body {
   .drag-text h3 {
     font-weight: 100;
     text-transform: uppercase;
-    color: #bd7ebd;
+    color: #641164;
     padding: 60px 0;
   }
   
