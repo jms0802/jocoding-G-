@@ -68,7 +68,6 @@
 
 
   <div>Teachable Machine Image Model</div>
-  <button type="button" onclick="predict()">예측</button>
   <script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
   <div class="file-upload">
     <!--<button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Add
@@ -205,7 +204,9 @@
         };
 
         reader.readAsDataURL(input.files[0]);
-        init();
+        init().then(()=>{
+          predict();
+        });
       } else {
         removeUpload();
       }
