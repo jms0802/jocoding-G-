@@ -177,12 +177,12 @@
           alert("잘못된 입력 값!");
           break;
       }
-      // classPrediction_p_text = Number(classPrediction_p) * 100
-      //  for (let i = 2; i < maxPredictions; i++) {
-      //    const classPrediction =
-      //      prediction[i].className + ": " + prediction[i].probability.toFixed(2);
-      //   labelContainer.childNodes[i].innerHTML = classPrediction;
-      // }
+      classPrediction_p_text = Number(classPrediction_p) * 100
+       for (let i = 0; i < maxPredictions; i++) {
+         const classPrediction =
+           prediction[i].className + ": " + prediction[i].probability.toFixed(2);
+        labelContainer.childNodes[i+2].innerHTML = classPrediction;
+      }
     }
   </script>
   <script>function readURL(input) {
