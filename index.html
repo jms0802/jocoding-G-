@@ -178,8 +178,9 @@
           break;
       }
        for (let i = 0; i < maxPredictions; i++) {
+         const classProbability = Number(prediction[i].probability*100).toFixed(2)
          const classPrediction =
-           prediction[i].className + ": " + Number(prediction[i].probability*100).toFixed(2);
+           prediction[i].className + ": " + String(classProbability);
         labelContainer.childNodes[i+2].innerHTML = classPrediction;
       }
     }
