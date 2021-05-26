@@ -61,7 +61,7 @@
   <section class="youtube">
     <div class="container mt-5 youtube-cover d-flex flex-row-reverse">
       <img src="images/youtube-img.jpg" alt="" class="youtube-icon">
-      <a href="" class="youtue-link">By 조코딩 유튜브 채널</a>
+      <a href="https://www.youtube.com/channel/UCQNE2JmbasNYbjGAcuBiRRg" class="youtue-link">제작 도움: 조코딩 유튜브 채널</a>
     </div>
   </section>
   <script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
@@ -177,12 +177,12 @@
           alert("잘못된 입력 값!");
           break;
       }
-       for (let i = 0; i < maxPredictions; i++) {
-         const classProbability = Number(prediction[i].probability*100).toFixed(0)
-         const classPrediction =
-           prediction[i].className + ": " + String(classProbability);
-        labelContainer.childNodes[i+2].innerHTML = classPrediction;
-      }
+      //  for (let i = 0; i < maxPredictions; i++) {
+      //    const classProbability = Number(prediction[i].probability*100).toFixed(0)
+      //    const classPrediction =
+      //      prediction[i].className + ": " + String(classProbability) + "%";
+      //   labelContainer.childNodes[i+2].innerHTML = classPrediction;
+      // }
     }
   </script>
   <script>function readURL(input) {
