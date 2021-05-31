@@ -11,6 +11,16 @@
 
   <title>(G)I-DLE 닮은 꼴</title>
   <link rel="stylesheet" href="style.css">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+  <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'UA-145482737-6');
+    </script>
 </head>
 
 <body>
@@ -115,7 +125,14 @@
             </div>
         </div>
     </div>
-    
+  
+  <script>
+    function gaReload1() {
+            gtag('event', '다른 사진으로 재시도 1차', {
+                'event_category': '다른 사진으로 재시도'
+            });
+        }
+  </script>
   <script>
     /**
     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
@@ -126,11 +143,6 @@
     this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
     };
     */
-    function gaReload1() {
-            gtag('event', '다른 사진으로 재시도 1차', {
-                'event_category': '다른 사진으로 재시도'
-            });
-        }
     (function () { // DON'T EDIT BELOW THIS LINE
       var d = document, s = d.createElement('script');
       s.src = 'https://nytail.disqus.com/embed.js';
@@ -255,6 +267,8 @@
       $('.image-upload-wrap').removeClass('image-dropping');
     });
   </script>
+
+  
 </body>
 <!--Copyright (c) 2021 by Aaron Vanston (https://codepen.io/aaronvanston/pen/yNYOXR)
 
