@@ -11,16 +11,6 @@
 
   <title>(G)I-DLE 닮은 꼴</title>
   <link rel="stylesheet" href="style.css">
-  <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
-  <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-        gtag('config', 'UA-145482737-6');
-    </script>
 </head>
 
 <body>
@@ -93,8 +83,7 @@
         </div>
       <div id="label-container"></div>
       <div class="image-title-wrap">
-        <button type="button p-2" class="try-again-btn" onclick="gaReload1();" data-toggle="modal" data-target="#adModal">
-          <span class="try-again-text">다른 사진으로 재시도</span>
+        <button onClick="window.location.reload()">다른 사진으로 재시도</button>
       </button>
       </div>
     </div>
@@ -102,37 +91,6 @@
   <div id="webcam-container"></div>
   <div id="disqus_thread"></div>
   
-  <div class="modal fade" id="adModal" tabindex="-1" role="dialog" aria-labelledby="adModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="adModalLabel">(AD)광고 - 재시도를 한번 더 눌러주세요.</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body d-flex justify-content-center">
-                    <ins class="kakao_ad_area" style="display:none;" 
- data-ad-unit    = "DAN-t89oh3sc0ew5" 
- data-ad-width   = "300" 
- data-ad-height  = "250"></ins>
-                </div>
-                <div class="modal-footer d-flex justify-content-center">
-                    <button type="button p-2" class="try-again-btn" onclick="gaReload2();">
-                        <span class="try-again-text">다른 사진으로 재시도</span>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-  
-  <script>
-    function gaReload1() {
-            gtag('event', '다른 사진으로 재시도 1차', {
-                'event_category': '다른 사진으로 재시도'
-            });
-        }
-  </script>
   <script>
     /**
     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
@@ -267,8 +225,6 @@
       $('.image-upload-wrap').removeClass('image-dropping');
     });
   </script>
-
-  
 </body>
 <!--Copyright (c) 2021 by Aaron Vanston (https://codepen.io/aaronvanston/pen/yNYOXR)
 
