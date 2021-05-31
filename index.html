@@ -78,10 +78,15 @@
     </div>
     <div class="file-upload-content">
       <img class="file-upload-image" id="face-image" src="#" alt="your image" />
+      <div id="loading" class="animated bounce">
+        <div class="spinner-border" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
       <div id="label-container"></div>
       <div class="image-title-wrap">
-        <button type="button" onclick="removeUpload()" class="mt-3 remove-image">Remove <span class="image-title">Uploaded
-            Image</span></button>
+        <button type="button p-2" class="try-again-btn" onclick="gaReload1();" data-toggle="modal" data-target="#adModal">
+          <span class="try-again-text">다른 사진으로 재시도</span>
+      </button>
       </div>
     </div>
   </div>
