@@ -79,8 +79,7 @@
     <div class="file-upload-content">
       <img class="file-upload-image" id="face-image" src="#" alt="your image" />
       <div id="loading" class="animated bounce">
-        <div class="spinner-border" role="status">
-            <span class="sr-only">Loading...</span>
+        <div class="spinner-border text-info"></div>
         </div>
       <div id="label-container"></div>
       <div class="image-title-wrap">
@@ -102,6 +101,11 @@
     this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
     };
     */
+    function gaReload1() {
+            gtag('event', '다른 사진으로 재시도 1차', {
+                'event_category': '다른 사진으로 재시도'
+            });
+        }
     (function () { // DON'T EDIT BELOW THIS LINE
       var d = document, s = d.createElement('script');
       s.src = 'https://nytail.disqus.com/embed.js';
@@ -197,7 +201,7 @@
 
         reader.onload = function (e) {
           $('.image-upload-wrap').hide();
-
+          $('#loading').show();
           $('.file-upload-image').attr('src', e.target.result);
           $('.file-upload-content').show();
 
@@ -207,6 +211,7 @@
         reader.readAsDataURL(input.files[0]);
         init().then(() => {
           predict();
+          $('#loading').hide();
         });
       } else {
         removeUpload();
