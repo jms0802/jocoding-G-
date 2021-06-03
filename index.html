@@ -75,7 +75,7 @@
       <div id="loading" class="animated bounce">
         <div class="spinner-border text-info"></div>
       </div>
-      <p class="result-message"></p>
+      <p class="result-message" style="margin: 3% 15%;"></p>
       <div id="label-container"></div>
       <div class="image-title-wrap">
         <button class="mt-5 rfButton" onClick="window.location.reload()">다른 사진으로 재시도</button>
@@ -164,7 +164,7 @@
         case "민니":
         //labelContainer.childNodes[1].innerHTML = "<img src='/images/Miyeon.jpg' width=\"auto\" height=\"150px\">"
         resultTitle = "<font color='#c449c2' size='5em'>" + classPrediction + "</font>" + "을(를) " + classPrediction_p + "% 닮았습니다.";
-        resultImg = "<img src='/images/Minne.jpg' width=\"auto\" height=\"150px\">"
+        resultImg = "<img src='/images/Minne.jpg' style='max-width: 100%;height: auto;''>"
           break;
         case "미연":
           labelContainer.childNodes[1].innerHTML = "<img src='/images/Miyeon.jpg' width=\"auto\" height=\"150px\">"
@@ -185,7 +185,7 @@
           alert("잘못된 입력 값!");
           break;
       }
-      $('.result-message').html(resultImg + resultTitle);
+      $('.result-message').html(resultTitle + resultImg);
       // var barWidth;
       // for (let i = 0; i < maxPredictions; i++) {
       //   if (prediction[i].probability.toFixed(2) > 0.1) {
