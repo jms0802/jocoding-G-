@@ -74,11 +74,12 @@
       <img class="file-upload-image" id="face-image" src="#" alt="your image" />
       <div id="loading" class="animated bounce">
         <div class="spinner-border text-info"></div>
-        </div>
+      </div>
+      <p class="result-message"></p>
       <div id="label-container"></div>
       <div class="image-title-wrap">
-        <button class="mt-5 rfButton"onClick="window.location.reload()">다른 사진으로 재시도</button>
-      </button>
+        <button class="mt-5 rfButton" onClick="window.location.reload()">다른 사진으로 재시도</button>
+        </button>
       </div>
     </div>
   </div>
@@ -90,7 +91,7 @@
     </div>
   </section>
   <div id="disqus_thread" style="margin: 0 15%;"></div>
-  
+
   <script>
     /**
     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
@@ -155,75 +156,113 @@
       const prediction = await model.predict(image, false);
       prediction.sort((a, b) => parseFloat(b.probability) - parseFloat(a.probability));
       console.log(prediction[0].className);
+      var resultImg, resultTitle;
       const classPrediction = prediction[0].className;
       const classPrediction_p = (Number(prediction[0].probability.toFixed(2)) * 100 - 0.01).toFixed(2);
-      labelContainer.childNodes[0].innerHTML = "<font color='#c449c2' size='5em'>" + classPrediction + "</font>" + "을(를) " + classPrediction_p + "% 닮았습니다.";
+      //labelContainer.childNodes[0].innerHTML = "<font color='#c449c2' size='5em'>" + classPrediction + "</font>" + "을(를) " + classPrediction_p + "% 닮았습니다.";
       switch (classPrediction) {
         case "민니":
-          labelContainer.childNodes[1].innerHTML = "<img src='/images/Minne.jpg' width=\"auto\" height=\"300px\">"
+          resultTitle = "<font color='#c449c2' size='5em'>" + classPrediction + "</font>" + "을(를) " + classPrediction_p + "% 닮았습니다.";
+          resultImg = "<img src='/images/Minne.jpg' width=\"auto\" height=\"150px\">"
           break;
         case "미연":
-          labelContainer.childNodes[1].innerHTML = "<img src='/images/Miyeon.jpg' width=\"auto\" height=\"300px\">"
+          labelContainer.childNodes[1].innerHTML = "<img src='/images/Miyeon.jpg' width=\"auto\" height=\"150px\">"
           break;
         case "슈화":
-          labelContainer.childNodes[1].innerHTML = "<img src='/images/Shuhwa.jpg' width=\"auto\" height=\"300px\">"
+          labelContainer.childNodes[1].innerHTML = "<img src='/images/Shuhwa.jpg' width=\"auto\" height=\"150px\">"
           break;
         case "수진":
-          labelContainer.childNodes[1].innerHTML = "<img src='/images/Soojin.jpg' width=\"auto\" height=\"300px\">"
+          labelContainer.childNodes[1].innerHTML = "<img src='/images/Soojin.jpg' width=\"auto\" height=\"150px\">"
           break;
         case "소연":
-          labelContainer.childNodes[1].innerHTML = "<img src='/images/Soyeon.jpg' width=\"auto\" height=\"300px\">"
+          labelContainer.childNodes[1].innerHTML = "<img src='/images/Soyeon.jpg' width=\"auto\" height=\"150px\">"
           break;
         case "우기":
-          labelContainer.childNodes[1].innerHTML = "<img src='/images/Yuqi.jpg' width=\"auto\" height=\"300px\">"
+          labelContainer.childNodes[1].innerHTML = "<img src='/images/Yuqi.jpg' width=\"auto\" height=\"150px\">"
           break;
         default:
           alert("잘못된 입력 값!");
           break;
       }
-      //  for (let i = 0; i < maxPredictions; i++) {
-      //    const classProbability = Number(prediction[i].probability*100).toFixed(0)
-      //    const classPrediction =
-      //      prediction[i].className + ": " + String(classProbability) + "%";
-      //   labelContainer.childNodes[i+2].innerHTML = classPrediction;
-      // }
-    }
+      $('.result-message').html(resultImg + resultTitle);
+      var barWidth;
+      for (let i = 0; i < maxPredictions; i++) {
+        if (prediction[i].probability.toFixed(2) > 0.1) {
+          barWidth = Math.round(prediction[i].probability.toFixed(2) * 100) + "%";
+        } else if (prediction[i].probability.toFixed(2) >= 0.01) {
+          barWidth = "4%"
+        } else {
+          barWidth = "2%"
+        }
+        var labelTitle;
+        switch (prediction[i].className) {
+          case "민니":
+            labelTitle = "민니"
+            break;
+          case "미연":
+            labelTitle = "미연"
+            break;
+          case "소연":
+            labelTitle = "소연"
+            break;
+          case "우기":
+            labelTitle = "우기"
+            break;
+          case "슈화":
+            labelTitle = "슈화"
+            break;
+          case "수진":
+            labelTitle = "수진"
+            break;
+          default:
+            labelTitle = "알수없음"
+        }
+        var label = "<div class='animal-label d-flex align-items-center'>" + labelTitle + "</div>"
+        var bar = "<div class='bar-container position-relative container'><div class='" + prediction[i].className + "-box'></div><div class='d-flex justify-content-center align-items-center " + prediction[i].className + "-bar' style='width: " + barWidth + "'><span class='d-block percent-text'>" + Math.round(prediction[i].probability.toFixed(2) * 100) + "%</span></div></div>"
+        labelContainer.childNodes[i].innerHTML = label + bar;
+        //  for (let i = 0; i < maxPredictions; i++) {
+        //    const classProbability = Number(prediction[i].probability*100).toFixed(0)
+        //    const classPrediction =
+        //      prediction[i].className + ": " + String(classProbability) + "%";
+        //   labelContainer.childNodes[i+2].innerHTML = classPrediction;
+        // }
+      }
   </script>
   <script>function readURL(input) {
-      if (input.files && input.files[0]) {
+        if (input.files && input.files[0]) {
 
-        var reader = new FileReader();
+          var reader = new FileReader();
 
-        reader.onload = function (e) {
-          $('.image-upload-wrap').hide();
-          $('#loading').show();
-          $('.file-upload-image').attr('src', e.target.result);
-          $('.file-upload-content').show();
+          reader.onload = function (e) {
+            $('.image-upload-wrap').hide();
+            $('#loading').show();
+            $('.file-upload-image').attr('src', e.target.result);
+            $('.file-upload-content').show();
 
-          $('.image-title').html(input.files[0].name);
-        };
+            $('.image-title').html(input.files[0].name);
+          };
 
-        reader.readAsDataURL(input.files[0]);
-        init().then(() => {
-          predict();
-          $('#loading').hide();
-        });
-      } else {
-        removeUpload();
+          reader.readAsDataURL(input.files[0]);
+          init().then(() => {
+            predict();
+            $('#loading').hide();
+          });
+        } else {
+          removeUpload();
+        }
       }
-    }
 
-    function removeUpload() {
-      $('.file-upload-input').replaceWith($('.file-upload-input').clone());
-      $('.file-upload-content').hide();
-      $('.image-upload-wrap').show();
-    }
-    $('.image-upload-wrap').bind('dragover', function () {
-      $('.image-upload-wrap').addClass('image-dropping');
-    });
-    $('.image-upload-wrap').bind('dragleave', function () {
-      $('.image-upload-wrap').removeClass('image-dropping');
-    });
+      function removeUpload() {
+        $('.file-upload-input').replaceWith($('.file-upload-input').clone());
+        $('.file-upload-content').hide();
+        $('.image-upload-wrap').show();
+      }
+      $('.image-upload-wrap').bind('dragover', function () {
+        $('.image-upload-wrap').addClass('image-dropping');
+      });
+      $('.image-upload-wrap').bind('dragleave', function () {
+        $('.image-upload-wrap').removeClass('image-dropping');
+      });
   </script>
 </body>
 <!--Copyright (c) 2021 by Aaron Vanston (https://codepen.io/aaronvanston/pen/yNYOXR)

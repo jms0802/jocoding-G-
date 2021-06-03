@@ -5,7 +5,7 @@ body {
   
   .file-upload {
     width: 70%;
-    margin: 0 auto;
+    margin: 5% auto;
     background-color: #cbcbcb79;
     padding: 11% 0%;
   }
@@ -87,8 +87,8 @@ body {
   }
   
   .file-upload-image {
-    max-height: 200px;
-    max-width: 200px;
+    max-height: 50%;
+    max-width: 50%;
     margin: auto;
     padding: 20px;
   }
@@ -136,7 +136,7 @@ body {
   }
 
   .section {
-    margin-top: 100px;
+    margin-top: 7%;
   }
 
   .title {
@@ -161,7 +161,7 @@ body {
   }
 
   .youtube-cover {
-    margin: 0 1%
+    justify-content: center;
   }
 
   .youtue-link {
