@@ -7,7 +7,7 @@ body {
     width: 70%;
     margin: 0 auto;
     background-color: #cbcbcb79;
-    padding: 11% 4%;
+    padding: 11% 0%;
   }
   
   .file-upload-btn {
@@ -122,6 +122,7 @@ body {
 
   .nav distance{
     padding: 2.1% 7.7%;
+    margin: 0 8%;
   }
 
   .navbar-light  .navbar-brand {
