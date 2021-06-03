@@ -160,6 +160,10 @@ body {
     }
   }
 
+  .youtube-cover {
+    margin: 0 1%
+  }
+
   .youtue-link {
     font-family: NanumSquareR;
     font-size: 1.5rem;
