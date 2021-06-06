@@ -142,7 +142,7 @@
       // or files from your local hard drive
       // Note: the pose library adds "tmImage" object to your window (window.tmImage)
       model = await tmImage.load(modelURL, metadataURL);
-      maxPredictions = model.getTotalClasses() + 2;
+      maxPredictions = model.getTotalClasses();
       labelContainer = document.getElementById("label-container");
       for (let i = 0; i < maxPredictions; i++) { // and class labels
         labelContainer.appendChild(document.createElement("div"));
@@ -190,41 +190,42 @@
           break;
       }
       $('.result-message').html(resultTitle + resultImg);
-      // var barWidth;
-      // for (let i = 0; i < maxPredictions; i++) {
-      //   if (prediction[i].probability.toFixed(2) > 0.1) {
-      //     barWidth = Math.round(prediction[i].probability.toFixed(2) * 100) + "%";
-      //   } else if (prediction[i].probability.toFixed(2) >= 0.01) {
-      //     barWidth = "4%"
-      //   } else {
-      //     barWidth = "2%"
-      //   }
-      //   var labelTitle;
-      //   switch (prediction[i].className) {
-      //     case "민니":
-      //       labelTitle = "민니"
-      //       break;
-      //     case "미연":
-      //       labelTitle = "미연"
-      //       break;
-      //     case "소연":
-      //       labelTitle = "소연"
-      //       break;
-      //     case "우기":
-      //       labelTitle = "우기"
-      //       break;
-      //     case "슈화":
-      //       labelTitle = "슈화"
-      //       break;
-      //     case "수진":
-      //       labelTitle = "수진"
-      //       break;
-      //     default:
-      //       labelTitle = "알수없음"
-      //   }
-      //   var label = "<div class='animal-label d-flex align-items-center'>" + labelTitle + "</div>"
-      //   var bar = "<div class='bar-container position-relative container'><div class='" + prediction[i].className + "-box'></div><div class='d-flex justify-content-center align-items-center " + prediction[i].className + "-bar' style='width: " + barWidth + "'><span class='d-block percent-text'>" + Math.round(prediction[i].probability.toFixed(2) * 100) + "%</span></div></div>"
-      //   labelContainer.childNodes[i].innerHTML = label + bar;
+      var barWidth;
+      for (let i = 0; i < maxPredictions; i++) {
+      if (prediction[i].probability.toFixed(2) > 0.1) {
+        barWidth = Math.round(prediction[i].probability.toFixed(2) * 100) + "%";
+        } else if (prediction[i].probability.toFixed(2) >= 0.01) {
+          barWidth = "4%"
+        } else {
+          barWidth = "2%"
+        }
+        var labelTitle;
+        switch (prediction[i].className) {
+          case "민니":
+            labelTitle = "민니"
+            break;
+          case "미연":
+            labelTitle = "미연"
+            break;
+          case "소연":
+            labelTitle = "소연"
+            break;
+          case "우기":
+            labelTitle = "우기"
+            break;
+          case "슈화":
+            labelTitle = "슈화"
+            break;
+          case "수진":
+            labelTitle = "수진"
+            break;
+          default:
+            labelTitle = "알수없음"
+        }
+      }
+        var label = "<div class='name-lable'>" + labelTitle + "</div>"
+        var bar = "<div class='bar-containe'><div class='" + prediction[i].className + "-box'></div><div class='d-flex justify-content-center align-items-center " + prediction[i].className + "-bar' style='width: " + barWidth + "'><span class='d-block percent-text'>" + Math.round(prediction[i].probability.toFixed(2) * 100 - 0.01) + "%</span></div></div>"
+        labelContainer.childNodes[i].innerHTML = label + bar;
 
         //  for (let i = 0; i < maxPredictions; i++) {
         //    const classProbability = Number(prediction[i].probability*100).toFixed(0)
