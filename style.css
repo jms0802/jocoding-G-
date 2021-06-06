@@ -198,3 +198,43 @@ body {
     text-align: center;
     color: #35465d;
   }
+
+  .bar-container {
+    height: 2.7rem;
+  }
+
+  .민니-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2rem;
+    border-radius: 10px;
+    width: 100%;
+    background-color: rgba(117, 204, 84, 0.2);
+  }
+  .민니-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2rem;
+    border-radius: 10px;
+    background-color: rgba(117, 204, 84, 0.2);
+  }
+
+  .미연-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2rem;
+    border-radius: 10px;
+    width: 100%;
+    background-color: rgba(117, 204, 84, 0.2);
+  }
+  .미연-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2rem;
+    border-radius: 10px;
+    background-color: rgba(117, 204, 84, 1);
+  }
