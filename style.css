@@ -202,6 +202,16 @@ body {
     height: 2.7rem;
   }
 
+  .animal-label {
+    width: 20%;
+    text-align: left;
+    height: 2rem;
+  }
+  #label-container {
+    width: 80%;
+    margin: 0 auto;
+  }
+
   .민니-box {
     position: absolute;
     top: 0;
