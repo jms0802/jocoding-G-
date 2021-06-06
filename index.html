@@ -227,7 +227,7 @@
             labelTitle = "알수없음"
           }
       
-        var label = "<div class='name-lable d-flex align-items-center'>" + labelTitle + "</div>"
+        var label = "<div class='name-label d-flex align-items-center'>" + labelTitle + "</div>"
         var bar = "<div class='bar-container position-relative container'><div class='" + prediction[i].className + "-box'></div><div class='d-flex justify-content-center align-items-center " + prediction[i].className + "-bar' style='width: " + barWidth + "'><span class='d-block percent-text'>" + Math.round(prediction[i].probability.toFixed(2) * 100 - 0.01) + "%</span></div></div>"
         labelContainer.childNodes[i].innerHTML = label + bar;
         }
