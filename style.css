@@ -4,10 +4,9 @@ body {
   }
   
   .file-upload {
-    width: 70%;
     margin: 5% auto;
     background-color: #cbcbcb79;
-    padding: 11% 0%;
+    padding: 8% 3%;
   }
   
   .file-upload-btn {
