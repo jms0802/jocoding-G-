@@ -147,8 +147,9 @@
       maxPredictions = model.getTotalClasses();
       labelContainer = document.getElementById("label-container");
       for (let i = 0; i < maxPredictions; i++) { // and class labels
-        labelContainer.appendChild(document.createElement("div"));
+        var element = document.createElement("div")
         element.classList.add("d-flex");
+        labelContainer.appendChild(element);
       }
     }
 
