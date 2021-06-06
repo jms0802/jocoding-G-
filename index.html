@@ -86,7 +86,7 @@
   <div id="webcam-container"></div>
   <section class="youtube">
     <div class="container mt-5 youtube-cover d-flex flex-row-reverse">
-      <img src="images/youtube-img.jpg" alt="" class="youtube-icon">
+      <!-- <img src="images/youtube-img.jpg" alt="" class="youtube-icon"> -->
       <a href="https://www.youtube.com/channel/UCQNE2JmbasNYbjGAcuBiRRg" class="youtue-link">제작 도움: 조코딩 유튜브 채널</a>
     </div>
   </section>
@@ -162,24 +162,28 @@
       //labelContainer.childNodes[0].innerHTML = "<font color='#c449c2' size='5em'>" + classPrediction + "</font>" + "을(를) " + classPrediction_p + "% 닮았습니다.";
       switch (classPrediction) {
         case "민니":
-        //labelContainer.childNodes[1].innerHTML = "<img src='/images/Miyeon.jpg' width=\"auto\" height=\"150px\">"
-        resultTitle = "<font color='#c449c2' size='5em'>" + classPrediction + "</font>" + "을(를) " + classPrediction_p + "% 닮았습니다.";
-        resultImg = "<img src='/images/Minne.jpg' style='max-width: 100%;height: auto;''>"
+          resultTitle = "<font color='#c449c2' size='5em'>" + classPrediction + "</font>" + "을(를) " + classPrediction_p + "% 닮았습니다.";
+          resultImg = "<img src='/images/Minne.jpg' style='max-width: 100%;height: auto;''>"
           break;
         case "미연":
-          labelContainer.childNodes[1].innerHTML = "<img src='/images/Miyeon.jpg' width=\"auto\" height=\"150px\">"
+          resultTitle = "<font color='#c449c2' size='5em'>" + classPrediction + "</font>" + "을(를) " + classPrediction_p + "% 닮았습니다.";
+          resultImg = "<img src='/images/Miyeon.jpg' style='max-width: 100%;height: auto;''>"
           break;
         case "슈화":
-          labelContainer.childNodes[1].innerHTML = "<img src='/images/Shuhwa.jpg' width=\"auto\" height=\"150px\">"
+          resultTitle = "<font color='#c449c2' size='5em'>" + classPrediction + "</font>" + "을(를) " + classPrediction_p + "% 닮았습니다.";
+          resultImg = "<img src='/images/Shuhwa.jpg' style='max-width: 100%;height: auto;''>"
           break;
         case "수진":
-          labelContainer.childNodes[1].innerHTML = "<img src='/images/Soojin.jpg' width=\"auto\" height=\"150px\">"
+          resultTitle = "<font color='#c449c2' size='5em'>" + classPrediction + "</font>" + "을(를) " + classPrediction_p + "% 닮았습니다.";
+          resultImg = "<img src='/images/Soojin.jpg' style='max-width: 100%;height: auto;''>"
           break;
         case "소연":
-          labelContainer.childNodes[1].innerHTML = "<img src='/images/Soyeon.jpg' width=\"auto\" height=\"150px\">"
+          resultTitle = "<font color='#c449c2' size='5em'>" + classPrediction + "</font>" + "을(를) " + classPrediction_p + "% 닮았습니다.";
+          resultImg = "<img src='/images/Soyeon.jpg' style='max-width: 100%;height: auto;''>"
           break;
         case "우기":
-          labelContainer.childNodes[1].innerHTML = "<img src='/images/Yuqi.jpg' width=\"auto\" height=\"150px\">"
+          resultTitle = "<font color='#c449c2' size='5em'>" + classPrediction + "</font>" + "을(를) " + classPrediction_p + "% 닮았습니다.";
+          resultImg = "<img src='/images/Yuqi.jpg' style='max-width: 100%;height: auto;''>"
           break;
         default:
           alert("잘못된 입력 값!");
