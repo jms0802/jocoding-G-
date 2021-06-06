@@ -91,7 +91,7 @@
     </div>
   </section>
   <div class="container pt-3"
-    <div id="disqus_thread" style="margin: 0 15%;"></div>
+    <div id="disqus_thread"></div>
   </div>
 
   <script>
@@ -148,6 +148,7 @@
       labelContainer = document.getElementById("label-container");
       for (let i = 0; i < maxPredictions; i++) { // and class labels
         labelContainer.appendChild(document.createElement("div"));
+        element.classList.add("d-flex");
       }
     }
 
@@ -164,27 +165,27 @@
       //labelContainer.childNodes[0].innerHTML = "<font color='#c449c2' size='5em'>" + classPrediction + "</font>" + "을(를) " + classPrediction_p + "% 닮았습니다.";
       switch (classPrediction) {
         case "민니":
-          resultTitle = "<font color='#c449c2' size='5em'>" + classPrediction + "</font>" + "을(를) " + classPrediction_p + "% 닮았습니다.";
+          resultTitle = "<div class='mb-3 msg'><font color='#c449c2' size='5%'>" + classPrediction + "</font>" + "'을(를) " + classPrediction_p + "% 닮았습니다.'</div>";
           resultImg = "<img src='/images/Minne.jpg' style='max-width: 100%;height: auto;''>"
           break;
         case "미연":
-          resultTitle = "<font color='#c449c2' size='5em'>" + classPrediction + "</font>" + "을(를) " + classPrediction_p + "% 닮았습니다.";
+          resultTitle = "<div class='mb-3 msg'><font color='#c449c2' size='5%'>" + classPrediction + "</font>" + "'을(를) " + classPrediction_p + "% 닮았습니다.'</div>";
           resultImg = "<img src='/images/Miyeon.jpg' style='max-width: 100%;height: auto;''>"
           break;
         case "슈화":
-          resultTitle = "<font color='#c449c2' size='5em'>" + classPrediction + "</font>" + "을(를) " + classPrediction_p + "% 닮았습니다.";
+          resultTitle = "<div class='mb-3 msg'><font color='#c449c2' size='5%'>" + classPrediction + "</font>" + "'을(를) " + classPrediction_p + "% 닮았습니다.'</div>";
           resultImg = "<img src='/images/Shuhwa.jpg' style='max-width: 100%;height: auto;''>"
           break;
         case "수진":
-          resultTitle = "<font color='#c449c2' size='5em'>" + classPrediction + "</font>" + "을(를) " + classPrediction_p + "% 닮았습니다.";
+          resultTitle = "<div class='mb-3 msg'><font color='#c449c2' size='5%'>" + classPrediction + "</font>" + "'을(를) " + classPrediction_p + "% 닮았습니다.'</div>";
           resultImg = "<img src='/images/Soojin.jpg' style='max-width: 100%;height: auto;''>"
           break;
         case "소연":
-          resultTitle = "<font color='#c449c2' size='5em'>" + classPrediction + "</font>" + "을(를) " + classPrediction_p + "% 닮았습니다.";
+          resultTitle = "<div class='mb-3 msg'><font color='#c449c2' size='5%'>" + classPrediction + "</font>" + "'을(를) " + classPrediction_p + "% 닮았습니다.'</div>";
           resultImg = "<img src='/images/Soyeon.jpg' style='max-width: 100%;height: auto;''>"
           break;
         case "우기":
-          resultTitle = "<font color='#c449c2' size='5em'>" + classPrediction + "</font>" + "을(를) " + classPrediction_p + "% 닮았습니다.";
+          resultTitle = "<div class='mb-3 msg'><font color='#c449c2' size='5%'>" + classPrediction + "</font>" + "'을(를) " + classPrediction_p + "% 닮았습니다.'</div>";
           resultImg = "<img src='/images/Yuqi.jpg' style='max-width: 100%;height: auto;''>"
           break;
         default:
