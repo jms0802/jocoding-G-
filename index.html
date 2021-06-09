@@ -196,7 +196,7 @@
       var barWidth;
       for (let i = 0; i < maxPredictions; i++) {
       if (prediction[i].probability.toFixed(2) > 0.1) {
-        barWidth = Math.round(prediction[i].probability.toFixed(2) * 100) + "%";
+        barWidth = (prediction[i].probability.toFixed(2) * 100 - 0.01) + "%";
         } else if (prediction[i].probability.toFixed(2) >= 0.01) {
           barWidth = "4%"
         } else {
@@ -227,7 +227,7 @@
           }
       
         var label = "<div class='name-label d-flex align-items-center'>" + labelTitle + "</div>"
-        var bar = "<div class='bar-container position-relative container'><div class='" + prediction[i].className + "-box'></div><div class='d-flex justify-content-center align-items-center " + prediction[i].className + "-bar' style='width: " + barWidth + "'><span class='d-block percent-text'>" + (prediction[i].probability.toFixed(2) * 100 - 0.01).toFixed() + "%</span></div></div>"
+        var bar = "<div class='bar-container position-relative container'><div class='" + prediction[i].className + "-box'></div><div class='d-flex justify-content-center align-items-center " + prediction[i].className + "-bar' style='width: " + barWidth + "'><span class='d-block percent-text'>" + barWidth.toFixed() + "%</span></div></div>"
         labelContainer.childNodes[i].innerHTML = label + bar;
         }
         //  for (let i = 0; i < maxPredictions; i++) {
