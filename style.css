@@ -168,7 +168,7 @@ body {
 
   @media screen and (max-width: 600px) {
     html {
-      font-size: 10px;
+      font-size: 0.8rem;
     }
     .navbar-brand {
       font-size: 2rem;
@@ -223,10 +223,10 @@ body {
     text-align: left;
     height: 2rem;
     justify-content:flex-end;
-    padding-right: 1%;
+    padding-right: 4%;
   }
   #label-container {
-    width: 80%;
+    width: 75%;
     margin: 0 auto;
   }
 
