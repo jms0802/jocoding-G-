@@ -1,5 +1,12 @@
+@font-face { 
+    font-family: 'Yontararak'; 
+    src: local('YOUNTARARAK'),
+         local(※),
+         url("/font/YontararakV2.ttf") format('truetype'); 
+  } 
+
 body {
-    font-family: sans-serif;
+    font-family: 'Yontararak';
     background-color: #ffffff;
   }
   
@@ -124,7 +131,7 @@ body {
   }
 
   .navbar-light  .navbar-brand {
-    font-family: NanumSquareR;
+    
     line-height: 1.68;
     text-align: left;
     color: #35465d;
@@ -139,13 +146,13 @@ body {
   }
 
   .title {
-    font-family: NanumSquareR;
+    
     text-align: center;
     color: #35465d;
   }
 
   .subtitle {
-    font-family: NanumSquareR;
+    
     text-align: center;
     color: #35465d;
   }
@@ -164,7 +171,7 @@ body {
   }
 
   .youtue-link {
-    font-family: NanumSquareR;
+    
     font-size: 1.5rem;
     line-height: 1.71;
     text-decoration-line: underline;
@@ -172,7 +179,7 @@ body {
     color: #f73737;
   }
   .youtue-link:hover {
-    font-family: NanumSquareR;
+    
     font-size: 1.5rem;
     line-height: 1.71;
     text-decoration-line: underline;
@@ -191,7 +198,7 @@ body {
   .upload-text {
     width: 65%;
     margin: 0 auto;
-    font-family: NanumSquareR;
+    
     font-size: 1.5rem;
     line-height: 1.53;
     text-align: center;
@@ -247,3 +254,7 @@ body {
     border-radius: 10px;
     background-color: rgba(117, 204, 84, 1);
   }
+
+  
+
+
