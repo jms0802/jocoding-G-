@@ -196,7 +196,7 @@
       var barWidth;
       for (let i = 0; i < maxPredictions; i++) {
       if (prediction[i].probability.toFixed(2) > 0.1) {
-        barWidth = Math.round(Number(prediction[0].probability.toFixed(2)) * 100 - 0.01) + "%";
+        barWidth = ((Math.round(prediction[i].probability.toFixed(2) * 100))-0.01) + "%";
         } else if (prediction[i].probability.toFixed(2) >= 0.01) {
           barWidth = "4%"
         } else {
