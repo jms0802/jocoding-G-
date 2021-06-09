@@ -8,7 +8,7 @@
 body {
     font-family: 'Yontararak';
     background-color: #ffffff;
-    font-size: 1.7rem;
+    font-size: 1.4rem;
   }
   
   .file-upload {
@@ -222,6 +222,7 @@ body {
     width: 20%;
     text-align: left;
     height: 2rem;
+    justify-content:center;
   }
   #label-container {
     width: 80%;
