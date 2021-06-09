@@ -168,7 +168,7 @@ body {
 
   @media screen and (max-width: 600px) {
     html {
-      font-size: 0.8rem;
+      font-size: 0.68rem;
     }
     .navbar-brand {
       font-size: 2rem;

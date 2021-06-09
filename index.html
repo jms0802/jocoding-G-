@@ -163,7 +163,6 @@
       var resultImg, resultTitle;
       const classPrediction = prediction[0].className;
       const classPrediction_p = (Number(prediction[0].probability.toFixed(2)) * 100 - 0.01).toFixed(2);
-      //labelContainer.childNodes[0].innerHTML = "<font color='#c449c2' size='5em'>" + classPrediction + "</font>" + "을(를) " + classPrediction_p + "% 닮았습니다.";
       switch (classPrediction) {
         case "민니":
           resultTitle = "<div class='mb-3 msg'><font color='#c449c2' size='6%'>" + classPrediction + "</font>" + "을(를) " + classPrediction_p + "% 닮았습니다.'</div>";
@@ -197,7 +196,7 @@
       var barWidth;
       for (let i = 0; i < maxPredictions; i++) {
       if (prediction[i].probability.toFixed(2) > 0.1) {
-        barWidth = Math.round(prediction[i].probability.toFixed(2) * 100 - 0.01) + "%";
+        barWidth = Math.round(Number(prediction[0].probability.toFixed(2)) * 100 - 0.01) + "%";
         } else if (prediction[i].probability.toFixed(2) >= 0.01) {
           barWidth = "4%"
         } else {
