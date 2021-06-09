@@ -8,6 +8,7 @@
 body {
     font-family: 'Yontararak';
     background-color: #ffffff;
+    font-size: 1.7rem;
   }
   
   .file-upload {
@@ -143,6 +144,14 @@ body {
 
   .section {
     margin-top: 7%;
+  }
+
+  .h1 {
+    font-size: 270%;
+  }
+
+  .h2 {
+    font-size: 170%;
   }
 
   .title {
