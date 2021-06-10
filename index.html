@@ -77,8 +77,13 @@
       </div>
       <p class="result-message" style="margin: 3% 15%;"></p>
       <div id="label-container"></div>
+
+      <!-- Go to www.addthis.com/dashboard to customize your tools -->
+      <div class="addthis_inline_share_toolbox"></div>
+
       <div class="image-title-wrap">
-        <button class="mt-4 rfButton" onClick="window.location.reload()" style="border-color: rgb(238 137 239 / 55%);">다른 사진으로 재시도</button>
+        <button class="mt-4 rfButton" onClick="window.location.reload()"
+          style="border-color: rgb(238 137 239 / 55%);">다른 사진으로 재시도</button>
         </button>
       </div>
     </div>
@@ -90,8 +95,7 @@
       <a href="https://www.youtube.com/channel/UCQNE2JmbasNYbjGAcuBiRRg" class="youtue-link">제작 도움: 조코딩 유튜브 채널</a>
     </div>
   </section>
-  <div class="container pt-3"
-    <div id="disqus_thread"></div>
+  <div class="container pt-3" <div id="disqus_thread"></div>
   </div>
 
   <script>
@@ -196,9 +200,9 @@
       var barWidth;
       var barWidth_r
       for (let i = 0; i < maxPredictions; i++) {
-      if (prediction[i].probability.toFixed(2) > 0.1) {
-        barWidth = prediction[i].probability.toFixed(2) * 100;
-        barWidth_r = barWidth.toFixed();
+        if (prediction[i].probability.toFixed(2) > 0.1) {
+          barWidth = prediction[i].probability.toFixed(2) * 100;
+          barWidth_r = barWidth.toFixed();
         } else if (prediction[i].probability.toFixed(2) >= 0.01) {
           barWidth = 4
           barWidth_r = barWidth;
@@ -228,56 +232,60 @@
             break;
           default:
             labelTitle = "알수없음"
-          }
-      
+        }
+
         var label = "<div class='name-label d-flex align-items-center'>" + labelTitle + "</div>"
         var bar = "<div class='bar-container position-relative container'><div class='" + prediction[i].className + "-box'></div><div class='d-flex justify-content-center align-items-center " + prediction[i].className + "-bar' style='width: " + String(barWidth) + "%'><span class='d-block percent-text'>" + String(barWidth_r) + "%</span></div></div>"
         labelContainer.childNodes[i].innerHTML = label + bar;
-        }
-        //  for (let i = 0; i < maxPredictions; i++) {
-        //    const classProbability = Number(prediction[i].probability*100).toFixed(0)
-        //    const classPrediction =
-        //      prediction[i].className + ": " + String(classProbability) + "%";
-        //   labelContainer.childNodes[i+2].innerHTML = classPrediction;
-        // }
       }
+      //  for (let i = 0; i < maxPredictions; i++) {
+      //    const classProbability = Number(prediction[i].probability*100).toFixed(0)
+      //    const classPrediction =
+      //      prediction[i].className + ": " + String(classProbability) + "%";
+      //   labelContainer.childNodes[i+2].innerHTML = classPrediction;
+      // }
+    }
   </script>
   <script>function readURL(input) {
-        if (input.files && input.files[0]) {
+      if (input.files && input.files[0]) {
 
-          var reader = new FileReader();
+        var reader = new FileReader();
 
-          reader.onload = function (e) {
-            $('.image-upload-wrap').hide();
-            $('#loading').show();
-            $('.file-upload-image').attr('src', e.target.result);
-            $('.file-upload-content').show();
+        reader.onload = function (e) {
+          $('.image-upload-wrap').hide();
+          $('#loading').show();
+          $('.file-upload-image').attr('src', e.target.result);
+          $('.file-upload-content').show();
 
-            $('.image-title').html(input.files[0].name);
-          };
+          $('.image-title').html(input.files[0].name);
+        };
 
-          reader.readAsDataURL(input.files[0]);
-          init().then(() => {
-            predict();
-            $('#loading').hide();
-          });
-        } else {
-          removeUpload();
-        }
+        reader.readAsDataURL(input.files[0]);
+        init().then(() => {
+          predict();
+          $('#loading').hide();
+        });
+      } else {
+        removeUpload();
       }
+    }
 
-      function removeUpload() {
-        $('.file-upload-input').replaceWith($('.file-upload-input').clone());
-        $('.file-upload-content').hide();
-        $('.image-upload-wrap').show();
-      }
-      $('.image-upload-wrap').bind('dragover', function () {
-        $('.image-upload-wrap').addClass('image-dropping');
-      });
-      $('.image-upload-wrap').bind('dragleave', function () {
-        $('.image-upload-wrap').removeClass('image-dropping');
-      });
+    function removeUpload() {
+      $('.file-upload-input').replaceWith($('.file-upload-input').clone());
+      $('.file-upload-content').hide();
+      $('.image-upload-wrap').show();
+    }
+    $('.image-upload-wrap').bind('dragover', function () {
+      $('.image-upload-wrap').addClass('image-dropping');
+    });
+    $('.image-upload-wrap').bind('dragleave', function () {
+      $('.image-upload-wrap').removeClass('image-dropping');
+    });
   </script>
+
+  <!-- Go to www.addthis.com/dashboard to customize your tools -->
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-60c2174a35e98d3f"></script>
+
 </body>
 <!--Copyright (c) 2021 by Aaron Vanston (https://codepen.io/aaronvanston/pen/yNYOXR)
 
