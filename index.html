@@ -197,14 +197,14 @@
       var barWidth_r
       for (let i = 0; i < maxPredictions; i++) {
       if (prediction[i].probability.toFixed(2) > 0.1) {
-        barWidth = prediction[i].probability.toFixed(2) * 100 - 0.01;
+        barWidth = prediction[i].probability.toFixed(2) * 100 - 0.05;
         barWidth_r = barWidth.toFixed();
         } else if (prediction[i].probability.toFixed(2) >= 0.01) {
           barWidth = "4"
-          barWidth_r = barWidth.toFixed();
+          barWidth_r = barWidth;
         } else {
           barWidth = "2"
-          barWidth_r = barWidth.toFixed();
+          barWidth_r = barWidth;
         }
         var labelTitle;
         switch (prediction[i].className) {
