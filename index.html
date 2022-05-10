@@ -177,23 +177,23 @@
       const classPrediction_p = (Number(prediction[0].probability.toFixed(2)) * 100 - 0.01).toFixed(2);
       switch (classPrediction) {
         case "Miyeon":
-          resultTitle = "<div class='mb-3 msg'><font color='#c449c2' size='6%'>" + classPrediction + "</font>" + "을(를) " + classPrediction_p + "% 닮았습니다.</div>";
+          resultTitle = "<div class='mb-3 msg'><font color='#c449c2' size='6%'>" + "미연" + "</font>" + "을(를) " + classPrediction_p + "% 닮았습니다.</div>";
           resultImg = "<img src='/images/Minne.jpg' style='max-width: 100%;height: auto;''>"
           break;
         case "Minnie":
-          resultTitle = "<div class='mb-3 msg'><font color='#c449c2' size='6%'>" + classPrediction + "</font>" + "을(를) " + classPrediction_p + "% 닮았습니다.</div>";
+          resultTitle = "<div class='mb-3 msg'><font color='#c449c2' size='6%'>" + "민니" + "</font>" + "을(를) " + classPrediction_p + "% 닮았습니다.</div>";
           resultImg = "<img src='/images/Miyeon.jpg' style='max-width: 100%;height: auto;''>"
           break;
         case "Soyeon":
-          resultTitle = "<div class='mb-3 msg'><font color='#c449c2' size='6%'>" + classPrediction + "</font>" + "을(를) " + classPrediction_p + "% 닮았습니다.</div>";
+          resultTitle = "<div class='mb-3 msg'><font color='#c449c2' size='6%'>" + "소연" + "</font>" + "을(를) " + classPrediction_p + "% 닮았습니다.</div>";
           resultImg = "<img src='/images/Shuhwa.jpg' style='max-width: 100%;height: auto;''>"
           break;
-        case "Yuqi":
-          resultTitle = "<div class='mb-3 msg'><font color='#c449c2' size='6%'>" + classPrediction + "</font>" + "을(를) " + classPrediction_p + "% 닮았습니다.</div>";
+        case "YUQI":
+          resultTitle = "<div class='mb-3 msg'><font color='#c449c2' size='6%'>" + "우기" + "</font>" + "을(를) " + classPrediction_p + "% 닮았습니다.</div>";
           resultImg = "<img src='/images/Soojin.jpg' style='max-width: 100%;height: auto;''>"
           break;
-        case "Shuhua":
-          resultTitle = "<div class='mb-3 msg'><font color='#c449c2' size='6%'>" + classPrediction + "</font>" + "을(를) " + classPrediction_p + "% 닮았습니다.</div>";
+        case "SHUHUA":
+          resultTitle = "<div class='mb-3 msg'><font color='#c449c2' size='6%'>" + "슈화" + "</font>" + "을(를) " + classPrediction_p + "% 닮았습니다.</div>";
           resultImg = "<img src='/images/Soyeon.jpg' style='max-width: 100%;height: auto;''>"
           break;
         default:
@@ -216,23 +216,20 @@
         }
         var labelTitle;
         switch (prediction[i].className) {
-          case "민니":
+          case "Minnie":
             labelTitle = "민니"
             break;
-          case "미연":
+          case "Miyeon":
             labelTitle = "미연"
             break;
-          case "소연":
+          case "Soyeon":
             labelTitle = "소연"
             break;
-          case "우기":
+          case "YUQI":
             labelTitle = "우기"
             break;
-          case "슈화":
+          case "SHUHUA":
             labelTitle = "슈화"
-            break;
-          case "수진":
-            labelTitle = "수진"
             break;
           default:
             labelTitle = "알수없음"
