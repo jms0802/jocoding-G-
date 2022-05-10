@@ -230,7 +230,7 @@ body {
     margin: 0 auto;
   }
 
-  .민니-box {
+  .Minnie-box {
     position: absolute;
     top: 0;
     left: 0;
@@ -239,7 +239,7 @@ body {
     width: 100%;
     background-color: rgb(183 84 204 / 20%);
   }
-  .민니-bar {
+  .Minnie-bar {
     position: absolute;
     top: 0;
     left: 0;
@@ -248,7 +248,7 @@ body {
     background-color: rgb(212 56 189 / 53%);
   }
 
-  .미연-box {
+  .Miyeon-box {
     position: absolute;
     top: 0;
     left: 0;
@@ -257,7 +257,7 @@ body {
     width: 100%;
     background-color: rgba(117, 204, 84, 0.2);
   }
-  .미연-bar {
+  .Miyeon-bar {
     position: absolute;
     top: 0;
     left: 0;
@@ -275,7 +275,7 @@ body {
     width: 100%;
     background-color: rgba(27, 175, 234, 0.2);
   }
-  .소연-bar {
+  .Soyeon-bar {
     position: absolute;
     top: 0;
     left: 0;
@@ -284,7 +284,7 @@ body {
     background-color: rgba(27, 175, 234, 1);
   }
 
-  .우기-box {
+  .YUQI-box {
     position: absolute;
     top: 0;
     left: 0;
@@ -293,7 +293,7 @@ body {
     width: 100%;
     background-color: rgba(251, 176, 59, 0.2);
   }
-  .우기-bar {
+  .YUQI-bar {
     position: absolute;
     top: 0;
     left: 0;
@@ -302,7 +302,7 @@ body {
     background-color: rgba(251, 176, 59, 1);
   }
 
-  .슈화-box {
+  .SHUHUA-box {
     position: absolute;
     top: 0;
     left: 0;
@@ -311,7 +311,7 @@ body {
     width: 100%;
     background-color: rgba(195, 140, 102, 0.2);
   }
-  .슈화-bar {
+  .SHUHUA-bar {
     position: absolute;
     top: 0;
     left: 0;
@@ -320,23 +320,7 @@ body {
     background-color: rgba(195, 140, 102, 1);
   }
 
-  .수진-box {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 2rem;
-    border-radius: 10px;
-    width: 100%;
-    background-color: rgba(49, 132, 155, 0.2);
-  }
-  .수진-bar {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 2rem;
-    border-radius: 10px;
-    background-color: rgba(49, 132, 155, 1);
-  }
+  
 
   
 
