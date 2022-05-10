@@ -236,7 +236,7 @@
         }
 
         var label = "<div class='name-label d-flex align-items-center'>" + labelTitle + "</div>"
-        var bar = "<div class='bar-container position-relative container'><div class='" + prediction[i].className + "-box'></div><div class='d-flex justify-content-center align-items-center " + prediction[i].className + "-bar' style='width: " + String(barWidth) + "%'><span class='d-block percent-text'>" + String(barWidth_r) + "%</span></div></div>"
+        var bar = "<div class='bar-container position-relative container'><div class='" + prediction[i].className + "-box'></div><div class='d-flex justify-content-center align-items-center " + prediction[i].className + "-bar' style='width: " + String(barWidth) + "%'><span class='d-block percent-text'>" + String(barWidth_r-1) + "%</span></div></div>"
         labelContainer.childNodes[i].innerHTML = label + bar;
       }
       //  for (let i = 0; i < maxPredictions; i++) {
