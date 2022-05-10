@@ -176,29 +176,25 @@
       const classPrediction = prediction[0].className;
       const classPrediction_p = (Number(prediction[0].probability.toFixed(2)) * 100 - 0.01).toFixed(2);
       switch (classPrediction) {
-        case "민니":
+        case "Miyeon":
           resultTitle = "<div class='mb-3 msg'><font color='#c449c2' size='6%'>" + classPrediction + "</font>" + "을(를) " + classPrediction_p + "% 닮았습니다.</div>";
           resultImg = "<img src='/images/Minne.jpg' style='max-width: 100%;height: auto;''>"
           break;
-        case "미연":
+        case "Minnie":
           resultTitle = "<div class='mb-3 msg'><font color='#c449c2' size='6%'>" + classPrediction + "</font>" + "을(를) " + classPrediction_p + "% 닮았습니다.</div>";
           resultImg = "<img src='/images/Miyeon.jpg' style='max-width: 100%;height: auto;''>"
           break;
-        case "슈화":
+        case "Soyeon":
           resultTitle = "<div class='mb-3 msg'><font color='#c449c2' size='6%'>" + classPrediction + "</font>" + "을(를) " + classPrediction_p + "% 닮았습니다.</div>";
           resultImg = "<img src='/images/Shuhwa.jpg' style='max-width: 100%;height: auto;''>"
           break;
-        case "수진":
+        case "Yuqi":
           resultTitle = "<div class='mb-3 msg'><font color='#c449c2' size='6%'>" + classPrediction + "</font>" + "을(를) " + classPrediction_p + "% 닮았습니다.</div>";
           resultImg = "<img src='/images/Soojin.jpg' style='max-width: 100%;height: auto;''>"
           break;
-        case "소연":
+        case "Shuhua":
           resultTitle = "<div class='mb-3 msg'><font color='#c449c2' size='6%'>" + classPrediction + "</font>" + "을(를) " + classPrediction_p + "% 닮았습니다.</div>";
           resultImg = "<img src='/images/Soyeon.jpg' style='max-width: 100%;height: auto;''>"
-          break;
-        case "우기":
-          resultTitle = "<div class='mb-3 msg'><font color='#c449c2' size='6%'>" + classPrediction + "</font>" + "을(를) " + classPrediction_p + "% 닮았습니다.</div>";
-          resultImg = "<img src='/images/Yuqi.jpg' style='max-width: 100%;height: auto;''>"
           break;
         default:
           alert("잘못된 입력 값!");
