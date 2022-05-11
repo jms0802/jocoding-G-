@@ -330,3 +330,14 @@ body {
     width: 20rem;
     margin: 0 auto;
   }
+
+  .ad-banner-2 {
+    margin: 0 auto;
+    text-align:center
+  }
+
+  .ad-banner-3 {
+    width: 45.5rem;
+    margin: 0 auto;
+    text-align:center
+  }
