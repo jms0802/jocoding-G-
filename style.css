@@ -326,4 +326,7 @@ body {
     background-color: rgba(195, 140, 102, 1);
   }
 
-  
+  .ad-banner {
+    width: 20rem;
+    margin: 0 auto;
+  }
