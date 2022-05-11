@@ -64,7 +64,8 @@
   </nav>
   <section class="section">
     <h1 class="title">(여자)아이들 닮은 꼴 테스트</h1>
-    <h2 class="subtitle">(여자)아이들 멤버 중 누구와 닮았을까?</h2>
+    <h3 class="subtitle">아이들 멤버 중 누구와 닮았을까?</h3>
+    <h4 class="subtitle" style="padding-top: 6‒;color: #e11900;margin-top: 20px;margin-bottom: 0px;">☆ 얼굴이 집중된 사진은 더 정확도가 올라가요! ☆</h4>
   </section>
   <script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
   <div class="container file-upload">
@@ -83,7 +84,7 @@
       <div id="loading" class="animated bounce">
         <div class="spinner-border text-info"></div>
       </div>
-      <p class="result-message" style="margin: 3% 15%;"></p>
+      <p class="result-message" style="margin: 2% 18%;"></p>
       <div id="label-container"></div>
 
       <!-- Go to www.addthis.com/dashboard to customize your tools -->
@@ -177,23 +178,23 @@
       const classPrediction_p = (Number(prediction[0].probability.toFixed(2)) * 100 - 0.01).toFixed(2);
       switch (classPrediction) {
         case "Miyeon":
-          resultTitle = "<div class='mb-3 msg'><font color='#c449c2' size='6%'>" + "미연" + "</font>" + "을(를) " + classPrediction_p + "% 닮았습니다.</div>";
+          resultTitle = "<div class='mb-3 msg'><font color='#7e00bf' size='6%'>" + "미연" + "</font>" + "을(를) " + classPrediction_p + "% 닮았습니다.</div>";
           resultImg = "<img src='/images/Miyeon.jpg' style='max-width: 100%;height: auto;''>"
           break;
         case "Minnie":
-          resultTitle = "<div class='mb-3 msg'><font color='#c449c2' size='6%'>" + "민니" + "</font>" + "을(를) " + classPrediction_p + "% 닮았습니다.</div>";
+          resultTitle = "<div class='mb-3 msg'><font color='#7e00bf' size='6%'>" + "민니" + "</font>" + "을(를) " + classPrediction_p + "% 닮았습니다.</div>";
           resultImg = "<img src='/images/Minnie.jpg' style='max-width: 100%;height: auto;''>"
           break;
         case "Soyeon":
-          resultTitle = "<div class='mb-3 msg'><font color='#c449c2' size='6%'>" + "소연" + "</font>" + "을(를) " + classPrediction_p + "% 닮았습니다.</div>";
+          resultTitle = "<div class='mb-3 msg'><font color='#7e00bf' size='6%'>" + "소연" + "</font>" + "을(를) " + classPrediction_p + "% 닮았습니다.</div>";
           resultImg = "<img src='/images/Soyeon.jpg' style='max-width: 100%;height: auto;''>"
           break;
         case "YUQI":
-          resultTitle = "<div class='mb-3 msg'><font color='#c449c2' size='6%'>" + "우기" + "</font>" + "을(를) " + classPrediction_p + "% 닮았습니다.</div>";
+          resultTitle = "<div class='mb-3 msg'><font color='#7e00bf' size='6%'>" + "우기" + "</font>" + "을(를) " + classPrediction_p + "% 닮았습니다.</div>";
           resultImg = "<img src='/images/Yuqi.jpg' style='max-width: 100%;height: auto;''>"
           break;
         case "SHUHUA":
-          resultTitle = "<div class='mb-3 msg'><font color='#c449c2' size='6%'>" + "슈화" + "</font>" + "을(를) " + classPrediction_p + "% 닮았습니다.</div>";
+          resultTitle = "<div class='mb-3 msg'><font color='#7e00bf' size='6%'>" + "슈화" + "</font>" + "을(를) " + classPrediction_p + "% 닮았습니다.</div>";
           resultImg = "<img src='/images/Shuhua.jpg' style='max-width: 100%;height: auto;''>"
           break;
         default:
@@ -217,19 +218,19 @@
         var labelTitle;
         switch (prediction[i].className) {
           case "Minnie":
-            labelTitle = "민니"
+            labelTitle = "민니   ＃"
             break;
           case "Miyeon":
-            labelTitle = "미연"
+            labelTitle = "미연   ＆"
             break;
           case "Soyeon":
-            labelTitle = "소연"
+            labelTitle = "소연   ＊"
             break;
           case "YUQI":
-            labelTitle = "우기"
+            labelTitle = "우기   §"
             break;
           case "SHUHUA":
-            labelTitle = "슈화"
+            labelTitle = "슈화   ※"
             break;
           default:
             labelTitle = "알수없음"
