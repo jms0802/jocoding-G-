@@ -176,9 +176,13 @@ body {
   }
 
   .youtube-cover {
-    justify-content: center;
+    justify-content: space-evenly;
+    padding: 0% 3rem;
   }
 
+  .youtube-link {
+    color: #7e00bf
+  }
   .youtue-link {
     
     font-size: 1.5rem;
@@ -197,7 +201,8 @@ body {
   }
 
   .youtube-icon {
-    width: 8%;
+    height: 3rem;
+    width: 3rem;
   }
 
   .upload-img {
@@ -321,3 +326,4 @@ body {
     background-color: rgba(195, 140, 102, 1);
   }
 
+  
