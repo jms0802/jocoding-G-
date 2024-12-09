@@ -3,3 +3,4 @@
 
 
 (G)I-DLE 닮은 꼴 사이트
+https://gidleface.netlify.app/
